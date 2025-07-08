@@ -28,7 +28,7 @@
 
 ## ✨ Features
 
-### 🧠 **AI-Powered Intelligence**
+### 🧠 **Personalized shopping suggestions**
 
 - 🎯 Smart product recommendations based on user behavior
 - 🔍 Natural language search capabilities
