@@ -1,0 +1,14 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="almondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E1BEE7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#almondGrad)" rx="10"/>
+  <rect x="120" y="60" width="60" height="80" fill="white" rx="5"/>
+  <text x="150" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#7B1FA2">Almond Milk</text>
+  <text x="150" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#7B1FA2">Plant-Based</text>
+  <circle cx="135" cy="80" r="3" fill="#8BC34A"/>
+  <circle cx="165" cy="85" r="3" fill="#8BC34A"/>
+</svg>

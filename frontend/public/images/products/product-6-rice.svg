@@ -1,0 +1,16 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="riceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F1F8E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DCEDC8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#riceGrad)" rx="10"/>
+  <circle cx="140" cy="80" r="2" fill="#8BC34A"/>
+  <circle cx="160" cy="85" r="2" fill="#8BC34A"/>
+  <circle cx="150" cy="95" r="2" fill="#8BC34A"/>
+  <circle cx="135" cy="90" r="2" fill="#8BC34A"/>
+  <circle cx="165" cy="90" r="2" fill="#8BC34A"/>
+  <text x="150" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#388E3C">Brown Rice</text>
+  <text x="150" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#388E3C">Whole Grain</text>
+</svg>

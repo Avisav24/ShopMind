@@ -1,0 +1,30 @@
+{
+  "name": "shopmind-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node simple-server.js",
+    "backend": "node simple-server.js",
+    "dev": "nodemon simple-server.js"
+  },
+  "keywords": [
+    "shopmind",
+    "ai",
+    "shopping",
+    "backend"
+  ],
+  "author": "ShopMind Team",
+  "license": "MIT",
+  "description": "ShopMind Backend API Server",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Image Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .product-card {
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+        display: inline-block;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .fruits {
+        background: linear-gradient(
+          135deg,
+          #ff9a9e 0%,
+          #fecfef 50%,
+          #fecfef 100%
+        );
+      }
+      .dairy {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      }
+      .bakery {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      }
+      .vegetables {
+        background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+      }
+      .grains {
+        background: linear-gradient(135deg, #eacda3 0%, #d6ae7b 100%);
+      }
+      .meat {
+        background: linear-gradient(
+          135deg,
+          #ff8177 0%,
+          #ff867a 0%,
+          #ff8c7f 21%,
+          #f99185 52%,
+          #cf556c 78%,
+          #b12a5b 100%
+        );
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SmartCart Product Image Generator</h1>
+    <p>
+      This will generate placeholder images for all products. Click "Generate
+      Images" to create them.
+    </p>
+
+    <button onclick="generateImages()">Generate All Product Images</button>
+    <button onclick="downloadImages()">Download Images as ZIP</button>
+
+    <div id="products-container"></div>
+
+    <script>
+      const products = [
+        { id: "1", name: "Organic Bananas", category: "fruits" },
+        { id: "2", name: "Greek Yogurt", category: "dairy" },
+        { id: "3", name: "Whole Grain Bread", category: "bakery" },
+        { id: "4", name: "Almond Milk", category: "dairy" },
+        { id: "5", name: "Organic Chicken Breast", category: "meat" },
+        { id: "6", name: "Brown Rice", category: "grains" },
+        { id: "7", name: "Fresh Spinach", category: "vegetables" },
+        { id: "8", name: "Quinoa", category: "grains" },
+        { id: "9", name: "Milk", category: "dairy" },
+        { id: "10", name: "Bread", category: "bakery" },
+        { id: "11", name: "Butter", category: "dairy" },
+        { id: "12", name: "Eggs", category: "dairy" },
+      ];
+
+      function generateImages() {
+        const container = document.getElementById("products-container");
+        container.innerHTML = "";
+
+        products.forEach((product) => {
+          const canvas = document.createElement("canvas");
+          canvas.width = 300;
+          canvas.height = 200;
+          const ctx = canvas.getContext("2d");
+
+          // Set gradient background based on category
+          const gradient = ctx.createLinearGradient(0, 0, 300, 200);
+          switch (product.category) {
+            case "fruits":
+              gradient.addColorStop(0, "#ff9a9e");
+              gradient.addColorStop(1, "#fecfef");
+              break;
+            case "dairy":
+              gradient.addColorStop(0, "#a8edea");
+              gradient.addColorStop(1, "#fed6e3");
+              break;
+            case "bakery":
+              gradient.addColorStop(0, "#ffecd2");
+              gradient.addColorStop(1, "#fcb69f");
+              break;
+            case "vegetables":
+              gradient.addColorStop(0, "#56ab2f");
+              gradient.addColorStop(1, "#a8e6cf");
+              break;
+            case "grains":
+              gradient.addColorStop(0, "#eacda3");
+              gradient.addColorStop(1, "#d6ae7b");
+              break;
+            case "meat":
+              gradient.addColorStop(0, "#ff8177");
+              gradient.addColorStop(1, "#b12a5b");
+              break;
+            default:
+              gradient.addColorStop(0, "#667eea");
+              gradient.addColorStop(1, "#764ba2");
+          }
+
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, 300, 200);
+
+          // Add product name
+          ctx.fillStyle = "white";
+          ctx.font = "bold 20px Arial";
+          ctx.textAlign = "center";
+          ctx.fillText(product.name, 150, 100);
+
+          // Add category
+          ctx.font = "16px Arial";
+          ctx.fillText(product.category.toUpperCase(), 150, 130);
+
+          // Create download link
+          const link = document.createElement("a");
+          link.download = `product-${product.id}-${product.name
+            .toLowerCase()
+            .replace(/\s+/g, "-")}.png`;
+          link.href = canvas.toDataURL();
+          link.textContent = `Download ${product.name}`;
+          link.style.display = "block";
+          link.style.margin = "5px";
+
+          const div = document.createElement("div");
+          div.appendChild(canvas);
+          div.appendChild(link);
+          container.appendChild(div);
+        });
+
+        alert(
+          'Images generated! Click on individual download links or use "Download Images as ZIP" button.'
+        );
+      }
+
+      function downloadImages() {
+        // This would require a zip library, for now just show instruction
+        alert(
+          "Please click on individual download links to save each image to your computer, then place them in the frontend/public/images/products/ folder."
+        );
+      }
+    </script>
+  </body>
+</html>

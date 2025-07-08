@@ -1,0 +1,12 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="butterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF59D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEB3B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#butterGrad)" rx="10"/>
+  <rect x="120" y="70" width="60" height="30" fill="#F57F17" rx="5"/>
+  <text x="150" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#E65100">Butter</text>
+  <text x="150" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FF6F00">Creamy & Rich</text>
+</svg>

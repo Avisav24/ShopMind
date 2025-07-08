@@ -1,0 +1,13 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spinachGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C8E6C9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#spinachGrad)" rx="10"/>
+  <path d="M130 70 Q150 50 170 70 Q150 90 130 70" fill="#2E7D32"/>
+  <path d="M120 90 Q140 70 160 90 Q140 110 120 90" fill="#2E7D32"/>
+  <text x="150" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Fresh Spinach</text>
+  <text x="150" y="150" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.8)">Organic & Fresh</text>
+</svg>

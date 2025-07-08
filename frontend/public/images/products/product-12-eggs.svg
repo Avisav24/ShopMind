@@ -1,0 +1,13 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="eggGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFCC80;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#eggGrad)" rx="10"/>
+  <ellipse cx="135" cy="85" rx="15" ry="20" fill="white"/>
+  <ellipse cx="165" cy="85" rx="15" ry="20" fill="white"/>
+  <text x="150" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#E65100">Eggs</text>
+  <text x="150" y="140" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#FF8F00">Farm Fresh</text>
+</svg>
