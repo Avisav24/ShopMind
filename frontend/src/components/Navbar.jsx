@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, User, Menu, X, Home, Calendar } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  ShoppingCart,
+  User,
+  Menu,
+  X,
+  Home,
+  Calendar,
+  Leaf,
+} from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,21 +35,21 @@ const Navbar = () => {
             <Link
               to="/"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue'
+                isActive("/")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue"
               }`}
             >
               <Home className="w-4 h-4" />
               <span>Home</span>
             </Link>
-            
+
             <Link
               to="/meal-planner"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/meal-planner') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue'
+                isActive("/meal-planner")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue"
               }`}
             >
               <Calendar className="w-4 h-4" />
@@ -49,11 +57,23 @@ const Navbar = () => {
             </Link>
 
             <Link
+              to="/eco-rewards"
+              className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/eco-rewards")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue"
+              }`}
+            >
+              <Leaf className="w-4 h-4" />
+              <span>Eco Rewards</span>
+            </Link>
+
+            <Link
               to="/cart"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors relative ${
-                isActive('/cart') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue'
+                isActive("/cart")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue"
               }`}
             >
               <ShoppingCart className="w-4 h-4" />
@@ -68,9 +88,9 @@ const Navbar = () => {
             <Link
               to="/profile"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/profile') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue'
+                isActive("/profile")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue"
               }`}
             >
               <User className="w-4 h-4" />
@@ -84,7 +104,11 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-walmart-blue"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -97,9 +121,9 @@ const Navbar = () => {
             <Link
               to="/"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue hover:bg-gray-50'
+                isActive("/")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue hover:bg-gray-50"
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -108,20 +132,31 @@ const Navbar = () => {
             <Link
               to="/meal-planner"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/meal-planner') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue hover:bg-gray-50'
+                isActive("/meal-planner")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue hover:bg-gray-50"
               }`}
               onClick={() => setIsOpen(false)}
             >
               Meal Planner
             </Link>
             <Link
+              to="/eco-rewards"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive("/eco-rewards")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue hover:bg-gray-50"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              Eco Rewards
+            </Link>
+            <Link
               to="/cart"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/cart') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue hover:bg-gray-50'
+                isActive("/cart")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue hover:bg-gray-50"
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -130,9 +165,9 @@ const Navbar = () => {
             <Link
               to="/profile"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/profile') 
-                  ? 'text-walmart-blue bg-blue-50' 
-                  : 'text-gray-700 hover:text-walmart-blue hover:bg-gray-50'
+                isActive("/profile")
+                  ? "text-walmart-blue bg-blue-50"
+                  : "text-gray-700 hover:text-walmart-blue hover:bg-gray-50"
               }`}
               onClick={() => setIsOpen(false)}
             >

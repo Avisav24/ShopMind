@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const ImageTest = () => {
   const products = [
     { name: "Bananas", image: "/images/products/product-1-bananas.svg" },
     { name: "Yogurt", image: "/images/products/product-2-yogurt.svg" },
     { name: "Bread", image: "/images/products/product-3-bread.svg" },
-    { name: "Almond Milk", image: "/images/products/product-4-almond-milk.svg" },
+    {
+      name: "Almond Milk",
+      image: "/images/products/product-4-almond-milk.svg",
+    },
     { name: "Chicken", image: "/images/products/product-5-chicken.svg" },
     { name: "Rice", image: "/images/products/product-6-rice.svg" },
     { name: "Spinach", image: "/images/products/product-7-spinach.svg" },
@@ -28,7 +31,7 @@ const ImageTest = () => {
               className="w-full h-32 object-contain mb-2"
               onError={(e) => {
                 console.error(`❌ Failed to load: ${product.image}`);
-                e.target.style.border = '2px solid red';
+                e.target.style.border = "2px solid red";
                 e.target.alt = `ERROR: ${product.name}`;
               }}
               onLoad={() => {

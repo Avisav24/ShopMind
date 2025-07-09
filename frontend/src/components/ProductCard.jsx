@@ -3,8 +3,10 @@ import { Plus, Star } from "lucide-react";
 
 const ProductCard = ({ product, onAddToCart }) => {
   // Debug logging for image paths
-  console.log(`🖼️ ProductCard rendering: ${product.name}, Image: ${product.image}`);
-  
+  console.log(
+    `🖼️ ProductCard rendering: ${product.name}, Image: ${product.image}`
+  );
+
   return (
     <div className="bg-white rounded-lg shadow-md card-hover p-4">
       <div className="relative">
@@ -13,12 +15,16 @@ const ProductCard = ({ product, onAddToCart }) => {
           alt={product.name}
           className="w-full h-48 object-contain rounded-lg mb-3 bg-gray-50"
           onError={(e) => {
-            console.error(`❌ Image failed to load: ${product.image} for product: ${product.name}`);
+            console.error(
+              `❌ Image failed to load: ${product.image} for product: ${product.name}`
+            );
             e.target.onerror = null;
             e.target.src = "/api/placeholder/300/200";
           }}
           onLoad={() => {
-            console.log(`✅ Image loaded successfully: ${product.image} for product: ${product.name}`);
+            console.log(
+              `✅ Image loaded successfully: ${product.image} for product: ${product.name}`
+            );
           }}
         />
         {product.discount && (

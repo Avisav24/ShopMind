@@ -195,9 +195,85 @@ router.get("/meals/suggestions", (req, res) => {
       },
     ];
 
-    res.json({ success: true, suggestions });
+    res.json({
+      success: true,
+      meals: suggestions,
+      plannedMeals: [], // Empty for now, can be populated with user's planned meals
+    });
   } catch (err) {
     console.error("Error fetching meal suggestions:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// GET /api/eco/rewards - Get eco rewards and impact data
+router.get("/eco/rewards", (req, res) => {
+  try {
+    // Mock eco rewards data
+    const ecoData = {
+      success: true,
+      data: {
+        userEcoPoints: 150,
+        level: "Eco Warrior",
+        nextLevelPoints: 200,
+        impact: {
+          co2Saved: 3.0,
+          plasticSaved: 18,
+          treesProtected: 2,
+          energySaved: 45,
+        },
+        rewards: [
+          {
+            id: 1,
+            name: "$5 Store Credit",
+            pointsCost: 100,
+            description: "Get $5 off your next purchase",
+            category: "discount",
+            icon: "💰",
+            available: true,
+          },
+          {
+            id: 2,
+            name: "Free Reusable Bag",
+            pointsCost: 75,
+            description: "High-quality eco-friendly shopping bag",
+            category: "product",
+            icon: "🛍️",
+            available: true,
+          },
+          {
+            id: 3,
+            name: "Plant a Tree",
+            pointsCost: 200,
+            description: "We'll plant a tree in your name",
+            category: "environmental",
+            icon: "🌳",
+            available: true,
+          },
+        ],
+      },
+    };
+
+    res.json(ecoData);
+  } catch (err) {
+    console.error("Error fetching eco rewards:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// POST /api/eco/redeem - Redeem eco reward
+router.post("/eco/redeem", (req, res) => {
+  try {
+    const { rewardId, pointsCost } = req.body;
+
+    // Mock redemption logic
+    res.json({
+      success: true,
+      message: "Reward redeemed successfully!",
+      newEcoPoints: 150 - pointsCost, // Mock calculation
+    });
+  } catch (err) {
+    console.error("Error redeeming reward:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 });

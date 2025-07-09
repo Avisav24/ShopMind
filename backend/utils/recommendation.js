@@ -5,7 +5,7 @@ function recommendProducts(userHistory, cart, productDB) {
   console.log("🔍 Debug: User history:", userHistory);
   console.log("🔍 Debug: User cart:", cart);
   console.log("🔍 Debug: Product count:", productDB.length);
-  
+
   // Sample a product to check if it has image field
   if (productDB.length > 0) {
     console.log("🔍 Debug: Sample product:", productDB[0]);
@@ -16,7 +16,12 @@ function recommendProducts(userHistory, cart, productDB) {
 
   for (let product of productDB) {
     if (purchased.has(product.name) && !inCart.has(product.name)) {
-      console.log("✅ Adding product to recommendations (history match):", product.name, "Image:", product.image);
+      console.log(
+        "✅ Adding product to recommendations (history match):",
+        product.name,
+        "Image:",
+        product.image
+      );
       recommendations.push({
         product: product,
         reason: "You've bought this before",
@@ -30,7 +35,12 @@ function recommendProducts(userHistory, cart, productDB) {
       });
 
       if (categoryMatch) {
-        console.log("✅ Adding product to recommendations (category match):", product.name, "Image:", product.image);
+        console.log(
+          "✅ Adding product to recommendations (category match):",
+          product.name,
+          "Image:",
+          product.image
+        );
         recommendations.push({
           product: product,
           reason: `Matches category: ${product.category}`,
@@ -41,14 +51,22 @@ function recommendProducts(userHistory, cart, productDB) {
 
   // Add some popular items if we don't have enough recommendations
   if (recommendations.length < 3) {
-    const popularItems = productDB.filter(p => 
-      !purchased.has(p.name) && 
-      !inCart.has(p.name) && 
-      !recommendations.some(r => r.product._id === p._id)
-    ).slice(0, 3 - recommendations.length);
-    
-    popularItems.forEach(product => {
-      console.log("✅ Adding popular product:", product.name, "Image:", product.image);
+    const popularItems = productDB
+      .filter(
+        (p) =>
+          !purchased.has(p.name) &&
+          !inCart.has(p.name) &&
+          !recommendations.some((r) => r.product._id === p._id)
+      )
+      .slice(0, 3 - recommendations.length);
+
+    popularItems.forEach((product) => {
+      console.log(
+        "✅ Adding popular product:",
+        product.name,
+        "Image:",
+        product.image
+      );
       recommendations.push({
         product: product,
         reason: "Popular item",

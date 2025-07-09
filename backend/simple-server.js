@@ -394,6 +394,209 @@ app.put("/api/cart/update/:itemId", (req, res) => {
   }
 });
 
+// Meals API endpoints
+app.get("/api/meals/suggestions", (req, res) => {
+  try {
+    // Mock meal suggestions
+    const suggestions = [
+      {
+        id: 1,
+        name: "Mediterranean Bowl",
+        type: "lunch",
+        ingredients: [
+          "Quinoa",
+          "Chickpeas",
+          "Cucumber",
+          "Tomatoes",
+          "Feta cheese",
+        ],
+        cookTime: "20 min",
+        calories: 450,
+        image: "/api/placeholder/300/200",
+      },
+      {
+        id: 2,
+        name: "Chicken Stir Fry",
+        type: "dinner",
+        ingredients: [
+          "Chicken breast",
+          "Bell peppers",
+          "Broccoli",
+          "Soy sauce",
+          "Rice",
+        ],
+        cookTime: "25 min",
+        calories: 520,
+        image: "/api/placeholder/300/200",
+      },
+      {
+        id: 3,
+        name: "Avocado Toast",
+        type: "breakfast",
+        ingredients: [
+          "Whole grain bread",
+          "Avocado",
+          "Tomato",
+          "Salt",
+          "Pepper",
+        ],
+        cookTime: "10 min",
+        calories: 320,
+        image: "/api/placeholder/300/200",
+      },
+    ];
+
+    res.json({
+      success: true,
+      meals: suggestions,
+      plannedMeals: [], // Empty for now, can be populated with user's planned meals
+    });
+  } catch (err) {
+    console.error("Error fetching meal suggestions:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// Add meal to plan (mock implementation)
+app.post("/api/meals/plan", (req, res) => {
+  const { date, mealType, mealName } = req.body;
+  console.log(`Adding meal plan: ${mealName} for ${mealType} on ${date}`);
+
+  res.json({
+    success: true,
+    message: "Meal added to plan successfully",
+  });
+});
+
+// Remove meal from plan (mock implementation)
+app.delete("/api/meals/plan/:date/:mealType", (req, res) => {
+  const { date, mealType } = req.params;
+  console.log(`Removing meal plan for ${mealType} on ${date}`);
+
+  res.json({
+    success: true,
+    message: "Meal removed from plan successfully",
+  });
+});
+
+// Eco Rewards API endpoints
+app.get("/api/eco/rewards", (req, res) => {
+  try {
+    // Mock eco rewards data
+    const ecoData = {
+      success: true,
+      data: {
+        userEcoPoints: 150,
+        level: "Eco Warrior",
+        nextLevelPoints: 200,
+        impact: {
+          co2Saved: 3.0,
+          plasticSaved: 18,
+          treesProtected: 2,
+          energySaved: 45,
+        },
+        rewards: [
+          {
+            id: 1,
+            title: "$5 Store Credit",
+            description: "Get $5 off your next purchase",
+            pointsCost: 100,
+            icon: "💰",
+            category: "discounts",
+          },
+          {
+            id: 2,
+            title: "Free Reusable Bag",
+            description: "High-quality eco-friendly shopping bag",
+            pointsCost: 75,
+            icon: "🛍️",
+            category: "eco-products",
+          },
+          {
+            id: 3,
+            title: "Plant a Tree",
+            description: "We'll plant a tree in your name",
+            pointsCost: 200,
+            icon: "🌳",
+            category: "environmental",
+          },
+        ],
+      },
+    };
+
+    res.json(ecoData);
+  } catch (err) {
+    console.error("Error fetching eco rewards:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// Redeem eco reward (mock implementation)
+app.post("/api/eco/redeem", (req, res) => {
+  try {
+    const { rewardId, pointsCost } = req.body;
+    console.log(`Redeeming reward ${rewardId} for ${pointsCost} points`);
+
+    // Mock redemption logic
+    res.json({
+      success: true,
+      message: "Reward redeemed successfully!",
+      newEcoPoints: 150 - pointsCost, // Mock calculation
+    });
+  } catch (err) {
+    console.error("Error redeeming reward:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// User profile endpoints
+app.get("/api/users/:userId", (req, res) => {
+  try {
+    const { userId } = req.params;
+    console.log(`Getting user profile for: ${userId}`);
+
+    // Mock user profile data
+    const userProfile = {
+      success: true,
+      profile: {
+        id: userId,
+        name: "John Doe",
+        email: "john.doe@example.com",
+        budgetLimit: 150,
+        ecoPoints: 120,
+        savingsGoal: 50,
+        totalSpent: 45.67,
+      },
+    };
+
+    res.json(userProfile);
+  } catch (err) {
+    console.error("Error fetching user profile:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// Update user profile
+app.put("/api/users/:userId", (req, res) => {
+  try {
+    const { userId } = req.params;
+    const updateData = req.body;
+    console.log(`Updating user profile for: ${userId}`, updateData);
+
+    res.json({
+      success: true,
+      message: "Profile updated successfully",
+      profile: {
+        id: userId,
+        ...updateData,
+      },
+    });
+  } catch (err) {
+    console.error("Error updating user profile:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Backend server running on port ${PORT}`);
