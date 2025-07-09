@@ -77,7 +77,7 @@ router.post("/cart/add", async (req, res) => {
       userData.cartItems = [];
     }
 
-    // Check if product already exists in cart
+   
     const existingItemIndex = userData.cartItems.findIndex(
       (item) => item.productId === productId
     );
