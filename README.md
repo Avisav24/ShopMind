@@ -1,5 +1,6 @@
 # 🧠 ShopMind – Your Intelligent Shopping Companion
 
+
 <div align="center">
 
 ![ShopMind Banner](https://img.shields.io/badge/ShopMind-6366f1?style=for-the-badge&logo=brain&logoColor=white)
