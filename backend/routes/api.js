@@ -64,7 +64,6 @@ router.get("/products", async (req, res) => {
   }
 });
 
-// POST /api/cart/add
 router.post("/cart/add", async (req, res) => {
   try {
     const { productId, quantity = 1 } = req.body;
