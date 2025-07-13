@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
   price: Number,
   isSustainable: Boolean,
   ecoScore: Number,
-  category: { type: String, required: true } // ⚠️ Needed by AI
+  category: { type: String, required: true } 
 });
 
 module.exports = mongoose.model('Product', productSchema);
