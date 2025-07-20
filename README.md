@@ -13,7 +13,7 @@
 
 <br/>
 
-**🚀 [Quick Start](#-quick-start) • 📖 [Documentation](#-documentation) • 🤝 [Contributing](#-contributing) • 🌟 [Features](#-features)**
+**🚀 [Quick Start](#-quick-start) • 🤝 [Contributing](#-contributing) • 🌟 [Features](#-features)**
 
 </div>
 
@@ -236,21 +236,6 @@ All product images are **custom-designed SVG illustrations** stored locally in `
 - 🔒 **Reliability** - No broken image links
 
 ---
-
-## 📖 Documentation
-
-Comprehensive documentation is available in the `docs/` folder:
-
-| Document                                                      | Description                          |
-| ------------------------------------------------------------- | ------------------------------------ |
-| 📚 **[Quick Start Guide](docs/QUICK_START_GUIDE.md)**         | Get up and running quickly           |
-| 🖼️ **[Product Image Updates](docs/PRODUCT_IMAGE_UPDATES.md)** | Custom image implementation          |
-| 🛠️ **[Cart Troubleshooting](docs/CART_TROUBLESHOOTING.md)**   | Fix common cart issues               |
-| 🔍 **[Diagnostic Tools](docs/DIAGNOSTIC.md)**                 | Debug frontend-backend communication |
-| ✅ **[Setup Complete Guide](docs/FINAL_SETUP_COMPLETE.md)**   | Final configuration steps            |
-
----
-
 ## 🧪 Testing & Development
 
 ### 🔍 **API Testing**
