@@ -3,7 +3,7 @@
 
 <div align="center">
 
-![ShopMind Banner](https://img.shields.io/badge/ShopMind-6366f1?style=for-the-badge&logo=brain&logoColor=white)
+![ShopMind Banner](https://img.shields.io/badge/🧠 ShopMind-6366f1?style=for-the-badge&logo=brain&logoColor=white)
 
 [![React](https://img.shields.io/badge/React-18.2.0-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
